@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //鄙视题: 将字符串中每个单词首字母转为大写
+    var str="you can you up";
+    //                              敏感词:y    c   y   u
+    //                                     ↓
+    str=str.replace(/\b[a-z]/ig, function(形参){
+      //打桩可以让回调函数执行过程现原形！
+      console.log(`调用了一次回调函数,形参=${形参},返回${形参.toUpperCase()}`);
+      //形参: 4种可能: y c y u
+      return 形参.toUpperCase();
+      //返回: 也4种可能Y C Y U
+    })
+    console.log(str);//"You Can You Up";
+  </script>
+</body>
+</html>

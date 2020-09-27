@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //数组家现成的reverse函数
+    var arr=[1,2,3,4,5];
+    arr.reverse();
+        //翻转
+    console.log(arr);
+    
+    //鄙视题: 翻转字符串： 
+    var str="helloworld";
+    //       0123456789.length=10
+    //console.log(str[1]);//e
+    //console.log(str.length);//10
+    //数组家不是有reverse()函数吗?
+    //错误: 
+    //str.reverse();//报错：str.reverse is not a function
+    //正确: 
+    var arr=str.split("");//1. 打散为字符数组
+    console.log(arr);
+    arr.reverse();//2. 翻转字符数组的内容
+    console.log(arr);
+    //错误: join()什么都不写，默认用,连接每个字符
+    //str=arr.join();
+    //正确: 
+    str=arr.join("");//3. 将翻转后的字符数组无缝拼接回字符串
+    console.log(str);//"dlrowolleh"
+  </script>
+</body>
+</html>

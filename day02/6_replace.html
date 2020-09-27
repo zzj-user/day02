@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var str="老师:请用小红 我的 朋友造句。小亮:小红是我的朋友。小然:朋友！小红是我的！";
+    // var str="you can you up!no can no bibi!";
+    //先用match在替换之前找一次
+    var arr=str.match(/小[\u4e00-\u9fa5]/g);
+    //然后查找结果的元素个数，也就是将来要替换的个数！
+    console.log(arr);//null
+    //希望替换str中所有以小字开头的人名为**
+    str=str.replace(/小[\u4e00-\u9fa5]/g, "**");
+    console.log(str);
+    //还想显示共替换了多少处！
+    //基础一般: 
+    //如果match找到了敏感词，才输出arr.length
+    if(arr!=null){
+      console.log(`共替换了${arr.length}处`);
+    }else{//否则如果match没找到敏感词，就直接输出0处代替
+      console.log(`共替换了0处`);
+    }
+    //学有余力: //复习第一阶段三目运算
+    //console.log(`共替换了${arr!=null?arr.length:0}处`)
+  </script>
+</body>
+</html>

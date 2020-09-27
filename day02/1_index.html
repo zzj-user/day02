@@ -1,0 +1,32 @@
+<!--按住ctrl+滚轮，缩放字体-->
+<!--输入!按回车，可生成网页基本结构-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!--第三阶段必须都用右键 live server运行！-->
+  <!--网页中如果写js，都要写在script标签中-->
+  <script>
+    //请用户输入一条消息内容
+    var msg=prompt("请输入消息内容");
+    //查找消息中是否包含敏感词我草
+    var i=msg.indexOf("我草");
+    //如果找到敏感词，返回敏感词位置
+    //如果没找到敏感词，返回-1
+    //如果包含敏感词
+    if(i!=-1){
+      //就在网页中提示红字: 包含敏感词，禁止发送
+      //``和${}不会的同学去第一阶段复习模板字符串
+//  (向) 页面(中)写  (一条HTML代码片段)
+      document.write(`<h1 style="color:red">包含敏感词，禁止发送</h1>`)
+    }else{//否则如果不包含敏感词
+      //就在网页中提示绿字：然哥说: 消息内容
+      document.write(`<h1 style="color:green">然哥说: ${msg}</h1>`)
+    }
+  </script>
+</body>
+</html>
